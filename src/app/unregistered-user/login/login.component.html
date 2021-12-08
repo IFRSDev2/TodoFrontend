@@ -1,4 +1,23 @@
-<p>
-  Login works!
-</p>
-<button routerLink="../register">register</button>
+<div >
+  <img id="logo" src="assets/img/BesTaskList.png">
+
+</div>
+<form>
+  <div class="form-group">
+    <label for="email" class="rotulos">E-mail</label><br>
+    <input type="email" class="formulario-cadastro" name="email" id="email">
+  </div>
+
+  <div class="form-group">
+    <label for="password" class="rotulos">Senha</label><br>
+    <input type="password" class="formulario-cadastro" name="password" id="password">
+  </div>
+
+  <input type="submit" class="btn btn-primary mt-4" value="Cadastrar">
+  <a href="#" class="btn btn-secondary mt-4 ml-2">Cancelar</a>
+
+</form>
+
+<div>
+  Esqueceu sua senha <a routerLink="../register">Clique aqui</a>
+</div>
