@@ -11,5 +11,8 @@ export class UnregisteredUserComponent implements OnInit {
 
   ngOnInit() {
   }
-
+  funcao ()
+  {
+    /// TODO implementar funcao
+  }
 }

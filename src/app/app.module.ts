@@ -7,9 +7,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { UnregisteredUserComponent } from './unregistered-user/unregistered-user.component';
 import { LoginComponent } from './unregistered-user/login/login.component';
 import { RegisterComponent } from './unregistered-user/register/register.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
-  declarations: [	
+  declarations: [
     AppComponent,
       UnregisteredUserComponent,
       LoginComponent,
@@ -18,7 +20,9 @@ import { RegisterComponent } from './unregistered-user/register/register.compone
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
