@@ -32,4 +32,10 @@
   <input type="submit" class="btn btn-primary mt-4" value="Cadastrar">
   <a href="#" class="btn btn-secondary mt-4 ml-2">Cancelar</a>
 
+  <div *ngIf="formularioDeCadastro.hasError('senhasDiferentes') && formularioDeCadastro.touched">
+    <p>
+      coisas deram errado
+    </p>
+  </div>
+
 </form>
