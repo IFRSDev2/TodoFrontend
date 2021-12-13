@@ -9,13 +9,15 @@ import { LoginComponent } from './unregistered-user/login/login.component';
 import { RegisterComponent } from './unregistered-user/register/register.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { RegisteredUserComponent } from './registered-user/registered-user.component';
 
 @NgModule({
-  declarations: [
+  declarations: [	
     AppComponent,
       UnregisteredUserComponent,
       LoginComponent,
-      RegisterComponent
+      RegisterComponent,
+      RegisteredUserComponent
    ],
   imports: [
     BrowserModule,
