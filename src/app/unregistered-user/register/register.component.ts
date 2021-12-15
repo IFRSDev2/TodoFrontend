@@ -26,19 +26,19 @@ export class RegisterComponent implements OnInit {
 
   onSubmit(userData: any) {
     console.log(userData);
-    
-    if (!this.verifyIfPasswordsMatch()) {
-      this.formularioDeCadastro.setErrors({senhasDiferentes: true});
-      
-      return;
-    }
 
     if(!this.verificarEmailsIguais()){
       this.formularioDeCadastro.setErrors({emailsDiferentes: true})
 
       return;
     }
-
+    
+    if (!this.verifyIfPasswordsMatch()) {
+      this.formularioDeCadastro.setErrors({senhasDiferentes: true});
+      
+      return;
+    }
+    
   
 
     this.authService.cadastro(userData.nome, userData.email, userData.emailConfirmacao, userData.senha, userData.senhaConfirmacao).subscribe(
