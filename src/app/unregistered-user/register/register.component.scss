@@ -10,14 +10,27 @@
 
 .rotulos{
   position: relative;
-  left: -82px;
+  left: -70px;
 
 }
 
 .rotulosConfirmacao{
   position: relative;
-  left: -45px;
+  left: -33px;
 }
 
+.alert {
+  position: relative;
+    width: 400px;
+    left: 40%;
+    top: 30px;
+}
+
+span{
+  position: relative;
+  font-size: small;
+  left: -36px;
+  color: darkred;
+}
 
 
