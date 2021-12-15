@@ -45,4 +45,10 @@
   </div> 
 </div>
 
+  <div *ngIf="formularioDeCadastro.hasError('senhasDiferentes') && formularioDeCadastro.touched">
+    <p>
+      coisas deram errado
+    </p>
+  </div>
+
 </form>

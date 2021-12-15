@@ -3,6 +3,8 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './unregistered-user/login/login.component';
 import { RegisterComponent } from './unregistered-user/register/register.component';
+import { RegisteredUserComponent } from './registered-user/registered-user.component';
+import { HomeComponent } from './registered-user/pages/home/home.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full'},
@@ -23,6 +25,14 @@ const routes: Routes = [
         redirectTo: 'login',
         pathMatch: 'full'
       }
+    ]
+  },
+  {
+    path: 'user',
+    component: RegisteredUserComponent,
+    children: [
+      { path: 'home', component: HomeComponent },
+      { path: '', redirectTo: 'home', pathMatch: 'full' }
     ]
   }
 ];
