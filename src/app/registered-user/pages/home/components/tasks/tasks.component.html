@@ -1,0 +1,6 @@
+<div *ngIf="tarefas">
+  <app-task
+    *ngFor="let tarefa of tarefas"
+    [tarefa]="tarefa"
+  ></app-task>
+</div>
