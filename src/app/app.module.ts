@@ -1,3 +1,5 @@
+import { TasksComponent } from './registered-user/pages/home/components/tasks/tasks.component';
+import { TaskComponent } from './registered-user/pages/home/components/task/task.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -10,14 +12,18 @@ import { RegisterComponent } from './unregistered-user/register/register.compone
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RegisteredUserComponent } from './registered-user/registered-user.component';
+import { HomeComponent } from './registered-user/pages/home/home.component';
 
 @NgModule({
-  declarations: [	
+  declarations: [
     AppComponent,
       UnregisteredUserComponent,
       LoginComponent,
       RegisterComponent,
-      RegisteredUserComponent
+      RegisteredUserComponent,
+      TaskComponent,
+      TasksComponent,
+      HomeComponent
    ],
   imports: [
     BrowserModule,
