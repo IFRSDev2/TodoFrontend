@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { EmailValidator, FormControl, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from './../services/auth.service';
+import { Component, OnInit, NgModule } from '@angular/core';
+import { EmailValidator, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
 
@@ -9,11 +9,12 @@ import { Router } from '@angular/router';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
+
 export class LoginComponent implements OnInit {
 
-  formularioDeLogin: FormGroup = new FormGroup({    
+  formularioDeLogin: FormGroup = new FormGroup({  
     email: new FormControl('', [Validators.required, Validators.email]),
-    senha: new FormControl('', [Validators.required, Validators.minLength(6)]),
+    senha: new FormControl('', [Validators.required, Validators.minLength(6)])
   });
 
   constructor(private authService: AuthService, private router: Router) { }
@@ -28,7 +29,7 @@ export class LoginComponent implements OnInit {
     this.authService.login(userData.email, userData.senha).subscribe(
       (response) => {
         console.log(response);
-        this.router.navigate(['/login']);
+        this.router.navigate(['/home']);
       },
       (error) => {
         console.log(error);
