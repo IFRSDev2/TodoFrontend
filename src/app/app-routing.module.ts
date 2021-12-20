@@ -5,6 +5,7 @@ import { LoginComponent } from './unregistered-user/login/login.component';
 import { RegisterComponent } from './unregistered-user/register/register.component';
 import { RegisteredUserComponent } from './registered-user/registered-user.component';
 import { HomeComponent } from './registered-user/pages/home/home.component';
+import { RememberPasswordComponent } from './unregistered-user/rememberPassword/rememberPassword.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full'},
@@ -19,6 +20,10 @@ const routes: Routes = [
       {
         path: 'register',
         component: RegisterComponent
+      },
+      {
+        path: 'rememberPassword',
+        component: RememberPasswordComponent
       },
       {
         path: '',
