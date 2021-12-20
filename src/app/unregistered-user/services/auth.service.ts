@@ -26,7 +26,8 @@ export class AuthService {
       email: email,
       emailConfirmacao: emailConfirmacao,
       senha: senha,
-      senhaConfirmacao: senhaConfirmacao
+      senhaConfirmacao: senhaConfirmacao,
+      telefone: telefone
     });
   }
 }

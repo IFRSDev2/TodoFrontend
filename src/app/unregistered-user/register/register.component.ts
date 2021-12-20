@@ -3,11 +3,13 @@ import { Component, OnInit, NgModule } from '@angular/core';
 import { EmailValidator, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
+
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.scss']
 })
+
 export class RegisterComponent implements OnInit {
 
   formularioDeCadastro: FormGroup = new FormGroup({
@@ -75,6 +77,9 @@ export class RegisterComponent implements OnInit {
     }
   }
 
+  validacaoDoFormatoDoTelefone(){
+
+  }
   
 
 }
