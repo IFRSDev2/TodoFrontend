@@ -20,7 +20,7 @@ export class AuthService {
     });
   }
 
-  public cadastro (nome: string, email: string, emailConfirmacao: string, senha: string, senhaConfirmacao: string) {
+  public cadastro (nome: string, email: string, emailConfirmacao: string, senha: string, senhaConfirmacao: string, telefone: number) {
     return this.http.post(CADASTRO_URL, {
       nome: nome,
       email: email,

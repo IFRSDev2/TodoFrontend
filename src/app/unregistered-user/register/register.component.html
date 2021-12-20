@@ -60,6 +60,16 @@
   </ng-container>
   </div>
 
+  <div class="form-group">
+    <label for="telefone" class="rotulos">Telefone</label><br>
+    <input type="tel" class="formulario-cadastro" name="telefone" id="telefone" formControlName="telefone"><br>
+    <ng-container *ngIf="formularioDeCadastro.controls.telefone.touched">
+      <span *ngIf="formularioDeCadastro.controls.telefone.errors">
+        Campo obrigatório
+      </span>
+  </ng-container>
+  </div>
+
   <input type="submit" class="btn btn-primary mt-4" value="Cadastrar">
   <a href="#" class="btn btn-secondary mt-4 ml-2">Cancelar</a> <br>
 

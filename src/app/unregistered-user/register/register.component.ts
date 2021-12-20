@@ -1,5 +1,5 @@
 import { AuthService } from './../services/auth.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, NgModule } from '@angular/core';
 import { EmailValidator, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
@@ -15,7 +15,8 @@ export class RegisterComponent implements OnInit {
     email: new FormControl('', [Validators.required, Validators.email]),
     emailConfirmacao: new FormControl('', [Validators.required, Validators.email]),
     senha: new FormControl('', [Validators.required, Validators.minLength(6)]),
-    senhaConfirmacao: new FormControl('', [Validators.required, Validators.minLength(6)])
+    senhaConfirmacao: new FormControl('', [Validators.required, Validators.minLength(6)]),
+    telefone: new FormControl('', [Validators.required, Validators.maxLength(11)])
   });
 
   constructor(private authService: AuthService, private router: Router) { }
@@ -39,9 +40,8 @@ export class RegisterComponent implements OnInit {
       return;
     }
     
-  
 
-    this.authService.cadastro(userData.nome, userData.email, userData.emailConfirmacao, userData.senha, userData.senhaConfirmacao).subscribe(
+    this.authService.cadastro(userData.nome, userData.email, userData.emailConfirmacao, userData.senha, userData.senhaConfirmacao, userData.telefone).subscribe(
       (response) => {
         console.log(response);
         this.router.navigate(['/login']);
@@ -74,5 +74,7 @@ export class RegisterComponent implements OnInit {
       return false;
     }
   }
+
+  
 
 }
