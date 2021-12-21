@@ -13,7 +13,9 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RegisteredUserComponent } from './registered-user/registered-user.component';
 import { HomeComponent } from './registered-user/pages/home/home.component';
+import { NgxMaskModule, IConfig } from 'ngx-mask';
 
+export const options: Partial<IConfig> | (() => Partial<IConfig>) = {};
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,14 +25,15 @@ import { HomeComponent } from './registered-user/pages/home/home.component';
       RegisteredUserComponent,
       TaskComponent,
       TasksComponent,
-      HomeComponent
+      HomeComponent,
    ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgxMaskModule.forRoot(options),
   ],
   providers: [],
   bootstrap: [AppComponent]

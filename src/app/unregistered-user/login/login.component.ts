@@ -12,7 +12,7 @@ import { Router } from '@angular/router';
 
 export class LoginComponent implements OnInit {
 
-  formularioDeLogin: FormGroup = new FormGroup({  
+  formularioDeLogin: FormGroup = new FormGroup({
     email: new FormControl('', [Validators.required, Validators.email]),
     senha: new FormControl('', [Validators.required, Validators.minLength(6)])
   });
@@ -24,16 +24,15 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit(userData: any) {
-    console.log(userData);    
+    console.log(userData);
 
     this.authService.login(userData.email, userData.senha).subscribe(
-      (response) => {
-        console.log(response);
+      (sucess) => {
+        console.log(sucess);
         this.router.navigate(['/home']);
       },
       (error) => {
         console.log(error);
-
       }
     );
   }

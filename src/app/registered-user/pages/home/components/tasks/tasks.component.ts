@@ -1,3 +1,4 @@
+import { TaskService } from './../../../../services/task.service';
 import { Tarefa } from './../../../../interfaces/tarefa';
 import { Component, OnInit } from '@angular/core';
 
@@ -10,13 +11,13 @@ export class TasksComponent implements OnInit {
 
   tarefas: Tarefa[] | undefined;
 
-  constructor() { }
+  constructor(private taskService: TaskService) { }
 
   ngOnInit() {
     this.tarefas = [
       {
         id: 1,
-        titulo: "Tarefa 1",
+        titulo: "Tarefa 15",
         descricao: "Descrição da tarefa 1",
         concluida: false
       },
@@ -28,5 +29,11 @@ export class TasksComponent implements OnInit {
       }
     ]
   }
-
+  pegarTarefas(){
+    this.taskService.pegarTarefas().subscribe(
+      sucess => {
+        this.tarefas = sucess.content;
+      }
+    )
+  }
 }
