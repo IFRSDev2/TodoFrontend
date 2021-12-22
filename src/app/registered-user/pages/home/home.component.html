@@ -1,4 +1,41 @@
-<p>
-  home works!
-  <app-tasks></app-tasks>
-</p>
+<div>
+
+  <div class="row mt-5">
+    <div class="col"></div>
+
+    <div class="col text-center">
+      <form action="" class="form-inline">
+        <label class="sr-only" for="inputPesquisa">Pesquisar</label>
+        <div class="input-group mr-2" id="divInputPesquisa">
+          <input type="text" class="form-control" id="inputPesquisa" placeholder="Nome da tarefa">
+        </div>
+        <button type="submit" class="btn btn-primary">Pesquisar</button>
+      </form>
+    </div>
+    
+    <div class="col">
+      <button class="btn btn-primary">Criar Tarefa</button>
+    </div>
+  </div>
+  
+  <div class="row mt-5">
+    <div class="col"></div>
+    <div class="col-auto text-center">
+      <div>
+        <button class="btn btn-danger mx-2">Limpar tarefas concluidas</button>
+        <button class="btn btn-primary mx-2">Mostrar tarefas pendentes</button>
+        <button class="btn btn-primary mx-2">Mostrar tarefas concluidas</button>
+      </div>
+    </div>
+    <div class="col"></div>
+  </div>
+
+  <div class="row mt-5">
+    <div class="col"></div>
+    <div class="col text-center">
+      <app-tasks></app-tasks>
+    </div>
+    <div class="col"></div>
+  </div>
+
+</div>

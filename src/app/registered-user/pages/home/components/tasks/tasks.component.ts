@@ -17,7 +17,7 @@ export class TasksComponent implements OnInit {
     this.tarefas = [
       {
         id: 1,
-        titulo: "Tarefa 15",
+        titulo: "Tarefa 1",
         descricao: "Descrição da tarefa 1",
         concluida: false
       },

@@ -14,6 +14,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { RegisteredUserComponent } from './registered-user/registered-user.component';
 import { HomeComponent } from './registered-user/pages/home/home.component';
 import { NgxMaskModule, IConfig } from 'ngx-mask';
+import { NavbarComponent } from './registered-user/shared/components/navbar/navbar.component';
 
 export const options: Partial<IConfig> | (() => Partial<IConfig>) = {};
 @NgModule({
@@ -26,6 +27,7 @@ export const options: Partial<IConfig> | (() => Partial<IConfig>) = {};
       TaskComponent,
       TasksComponent,
       HomeComponent,
+      NavbarComponent
    ],
   imports: [
     BrowserModule,
