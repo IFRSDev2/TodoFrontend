@@ -34,4 +34,8 @@ export class TaskService {
   public deletarTarefa(id: number): Observable<Tarefa>{
     return this.http.delete<Tarefa>(TAREFAS_URL + "/" + id);
   }
+
+  public pegarTarefasPorNome(nome: string): Observable<Pageable<Tarefa>>{
+    return this.http.get<Pageable<Tarefa>>(TAREFAS_URL + "?nome=" + nome);
+  }
 }

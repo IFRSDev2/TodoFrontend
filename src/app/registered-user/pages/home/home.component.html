@@ -32,9 +32,37 @@
 
   <div class="row mt-5">
     <div class="col"></div>
+
     <div class="col text-center">
-      <app-tasks></app-tasks>
+      <div *ngIf="tarefas">
+
+        <app-task
+          *ngFor="let t of tarefasAssistir"
+          [tarefa]="t"
+        ></app-task>
+      
+        <hr>
+        <app-task
+        *ngFor="let t of tarefasAcademico"
+        [tarefa]="t"
+        ></app-task>
+      
+        <hr>
+        <app-task
+        *ngFor="let t of tarefasLazer"
+        [tarefa]="t"
+        ></app-task>
+      
+       <hr>
+        <app-task
+        *ngFor="let t of tarefasComprar"
+        [tarefa]="t"
+        >
+        </app-task>
+      
+      </div>
     </div>
+
     <div class="col"></div>
   </div>
 

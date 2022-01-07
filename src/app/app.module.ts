@@ -1,4 +1,3 @@
-import { TasksComponent } from './registered-user/pages/home/components/tasks/tasks.component';
 import { TaskComponent } from './registered-user/pages/home/components/task/task.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -25,7 +24,6 @@ export const options: Partial<IConfig> | (() => Partial<IConfig>) = {};
       RegisterComponent,
       RegisteredUserComponent,
       TaskComponent,
-      TasksComponent,
       HomeComponent,
       NavbarComponent
    ],
