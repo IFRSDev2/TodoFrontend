@@ -9,12 +9,12 @@
         <div class="input-group mr-2" id="divInputPesquisa">
           <input type="text" class="form-control" id="inputPesquisa" placeholder="Nome da tarefa">
         </div>
-        <button type="submit" class="btn btn-primary">Pesquisar</button>
+        <button type="submit" class="btn btn-primary shadow">Pesquisar</button>
       </form>
     </div>
     
     <div class="col">
-      <button class="btn btn-primary">Criar Tarefa</button>
+      <button class="btn btn-primary shadow">Criar Tarefa</button>
     </div>
   </div>
   
@@ -22,48 +22,65 @@
     <div class="col"></div>
     <div class="col-auto text-center">
       <div>
-        <button class="btn btn-danger mx-2">Limpar tarefas concluidas</button>
-        <button class="btn btn-primary mx-2">Mostrar tarefas pendentes</button>
-        <button class="btn btn-primary mx-2">Mostrar tarefas concluidas</button>
+        <button class="btn btn-danger mx-2 shadow">Limpar tarefas concluidas</button>
+        <button class="btn btn-primary mx-2 shadow">Mostrar tarefas pendentes</button>
+        <button class="btn btn-primary mx-2 shadow">Mostrar tarefas concluidas</button>
       </div>
     </div>
     <div class="col"></div>
   </div>
 
   <div class="row mt-5">
-    <div class="col"></div>
+    <div class="col-2"></div>
 
-    <div class="col text-center">
-      <div *ngIf="tarefas">
+    <div class="col-10 text-center">
 
-        <app-task
-          *ngFor="let t of tarefasAssistir"
-          [tarefa]="t"
-        ></app-task>
-      
-        <hr>
-        <app-task
-        *ngFor="let t of tarefasAcademico"
-        [tarefa]="t"
-        ></app-task>
-      
-        <hr>
-        <app-task
-        *ngFor="let t of tarefasLazer"
-        [tarefa]="t"
-        ></app-task>
-      
-       <hr>
-        <app-task
-        *ngFor="let t of tarefasComprar"
-        [tarefa]="t"
-        >
-        </app-task>
-      
+      <div class="row" *ngIf="tarefas">
+
+        <div class="card bg-light col-3 shadow mx-2" style="max-width: 16rem;">
+          <div class="card-header">Assistir</div>
+          <div class="card-body">
+            <app-task
+              *ngFor="let t of tarefasAssistir"
+              [tarefa]="t"
+            ></app-task>
+          </div>
+        </div>
+          
+        <div class="card bg-light col-3 shadow mx-2" style="max-width: 16rem;">
+          <div class="card-header">Academico</div>
+          <div class="card-body">
+            <app-task
+            *ngFor="let t of tarefasAcademico"
+            [tarefa]="t"
+            ></app-task>
+          </div>
+        </div>
+
+        <div class="card bg-light col-3 shadow mx-2" style="max-width: 16rem;">
+          <div class="card-header">Lazer</div>
+          <div class="card-body">
+            <app-task
+            *ngFor="let t of tarefasLazer"
+            [tarefa]="t"
+            ></app-task>
+          </div>
+        </div>
+
+        <div class="card shadow bg-light col-3 mx-2" style="max-width: 16rem;">
+          <div class="card-header">Comprar</div>
+          <div class="card-body">
+            <app-task
+            *ngFor="let t of tarefasComprar"
+            [tarefa]="t"
+            ></app-task>
+          </div>
+        </div>
+
       </div>
     </div>
 
-    <div class="col"></div>
+    <div class="col-1"></div>
   </div>
 
 </div>
