@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Tarefa } from '../../interfaces/tarefa';
+import { TipoTarefa } from '../../interfaces/tipoTarefa';
 import { TaskService } from '../../services/task.service';
 
 @Component({
@@ -22,48 +23,44 @@ export class HomeComponent implements OnInit {
     this.tarefas = [
       {
         id: 1,
-        titulo: "Tarefa 1",
-        descricao: "Descrição da tarefa 1",
-        concluida: false,
-        categoria: "Lazer"
+        nomeTarefa: "Fazer a prova de matemática",
+        tipoTarefa: TipoTarefa.Lazer,
+        local: "Sala de aula"
       },
       {
         id: 2,
-        titulo: "Tarefa 2",
-        descricao: "Descrição da tarefa 2",
-        concluida: true,
-        categoria: "Academico"
+        nomeTarefa: "Assistir ao filme de Star Wars",
+        tipoTarefa: TipoTarefa.Assistir,
+        local: "Cinema"
       },
       {
         id: 3,
-        titulo: "Tarefa 3",
-        descricao: "Descrição da tarefa 3",
-        concluida: false,
-        categoria: "Assistir"
+        nomeTarefa: "Comprar um novo notebook",
+        tipoTarefa: TipoTarefa.Comprar,
+        local: "Mercado"
       },
       {
         id: 4,
-        titulo: "Tarefa 4",
-        descricao: "Descrição da tarefa 4",
-        concluida: false,
-        categoria: "Comprar"
+        nomeTarefa: "Fazer a prova de matemática",
+        tipoTarefa: TipoTarefa.Academico,
+        local: "Sala de aula"
       }
     ];
 
-    this.tarefasAcademico = this.tarefas?.filter(tarefa => tarefa.categoria == "Academico");
-    this.tarefasAssistir = this.tarefas?.filter(tarefa => tarefa.categoria == "Assistir");
-    this.tarefasComprar = this.tarefas?.filter(tarefa => tarefa.categoria == "Comprar");
-    this.tarefasLazer = this.tarefas?.filter(tarefa => tarefa.categoria == "Lazer");
+    this.tarefasAcademico = this.tarefas?.filter(tarefa => tarefa.tipoTarefa == TipoTarefa.Academico);
+    this.tarefasAssistir = this.tarefas?.filter(tarefa => tarefa.tipoTarefa == TipoTarefa.Assistir);
+    this.tarefasComprar = this.tarefas?.filter(tarefa => tarefa.tipoTarefa == TipoTarefa.Comprar);
+    this.tarefasLazer = this.tarefas?.filter(tarefa => tarefa.tipoTarefa == TipoTarefa.Lazer);
 
   }
   pegarTarefas(){
     this.taskService.pegarTarefas().subscribe(
       sucess => {
         this.tarefas = sucess.content;
-        this.tarefasAcademico = this.tarefas?.filter(tarefa => tarefa.categoria == "Academico");
-        this.tarefasAssistir = this.tarefas?.filter(tarefa => tarefa.categoria == "Assistir");
-        this.tarefasComprar = this.tarefas?.filter(tarefa => tarefa.categoria == "Comprar");
-        this.tarefasLazer = this.tarefas?.filter(tarefa => tarefa.categoria == "Lazer");
+        this.tarefasAcademico = this.tarefas?.filter(tarefa => tarefa.tipoTarefa == TipoTarefa.Academico);
+        this.tarefasAssistir = this.tarefas?.filter(tarefa => tarefa.tipoTarefa == TipoTarefa.Assistir);
+        this.tarefasComprar = this.tarefas?.filter(tarefa => tarefa.tipoTarefa == TipoTarefa.Comprar);
+        this.tarefasLazer = this.tarefas?.filter(tarefa => tarefa.tipoTarefa == TipoTarefa.Lazer);
       }
     )
   }

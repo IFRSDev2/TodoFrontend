@@ -1,7 +1,8 @@
+import { TipoTarefa } from "./tipoTarefa";
+
 export interface Tarefa {
   id: number;
-  titulo: string;
-  descricao: string;
-  concluida: boolean;
-  categoria: string;
+  nomeTarefa: string;
+  tipoTarefa: TipoTarefa;
+  local: string;
 }
