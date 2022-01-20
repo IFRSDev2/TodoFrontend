@@ -64,6 +64,16 @@ export class HomeComponent implements OnInit {
       }
     )
   }
-  
 
+  pegarTarefasPorNome(nome: string){
+    this.taskService.pegarTarefasPorNome(nome).subscribe(
+      sucess => {
+        this.tarefas = sucess.content;
+        this.tarefasAcademico = this.tarefas?.filter(tarefa => tarefa.tipoTarefa == TipoTarefa.Academico);
+        this.tarefasAssistir = this.tarefas?.filter(tarefa => tarefa.tipoTarefa == TipoTarefa.Assistir);
+        this.tarefasComprar = this.tarefas?.filter(tarefa => tarefa.tipoTarefa == TipoTarefa.Comprar);
+        this.tarefasLazer = this.tarefas?.filter(tarefa => tarefa.tipoTarefa == TipoTarefa.Lazer);
+      }
+    )
+  }
 }

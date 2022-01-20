@@ -4,10 +4,10 @@
     <div class="col"></div>
 
     <div class="col text-center">
-      <form action="" class="form-inline">
+      <form class="form-inline"(submit)="pegarTarefasPorNome(searchInput.value)" onsubmit="return false">
         <label class="sr-only" for="inputPesquisa">Pesquisar</label>
         <div class="input-group mr-2" id="divInputPesquisa">
-          <input type="text" class="form-control" id="inputPesquisa" placeholder="Nome da tarefa">
+          <input type="text" class="form-control" id="inputPesquisa" placeholder="Nome da tarefa" #searchInput>
         </div>
         <button type="submit" class="btn btn-primary shadow">Pesquisar</button>
       </form>
