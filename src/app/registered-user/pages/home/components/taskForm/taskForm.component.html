@@ -1,3 +1,11 @@
-<p>
-  taskForm works!
-</p>
+<form [formGroup]="formularioDaTarefa" (ngSubmit)="onSubmit(formularioDaTarefa.value)">
+
+  <div class="form-group">
+    <label for="nomeTarefa">Nome: </label>
+    <input type="text" name="nomeTarefa" id="nomeTarefa" formControlName="nomeTarefa">
+    <label for="tipoTarefa">Tipo: </label>
+    <input type="text" name="tipoTarefa" id="tipoTarefa" formControlName="tipoTarefa">
+    <label for="local">Local: </label>
+    <input type="text" name="local" id="local" formControlName="local">
+  </div>
+</form>
