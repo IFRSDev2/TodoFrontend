@@ -14,8 +14,16 @@
     </div>
     
     <div class="col">
-      <button class="btn btn-primary shadow">Criar Tarefa</button>
+      <button class="btn btn-primary shadow" (click)="criarTarefa = !criarTarefa">Criar Tarefa</button>
     </div>
+  </div>
+  
+  <div class="row mt-5" *ngIf="criarTarefa">
+    <div class="col"></div>
+    <div class="col-auto">
+      <app-taskForm></app-taskForm>
+    </div>
+    <div class="col"></div>
   </div>
   
   <div class="row mt-5">

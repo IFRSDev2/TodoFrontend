@@ -14,6 +14,7 @@ import { RegisteredUserComponent } from './registered-user/registered-user.compo
 import { HomeComponent } from './registered-user/pages/home/home.component';
 import { NgxMaskModule, IConfig } from 'ngx-mask';
 import { NavbarComponent } from './registered-user/shared/components/navbar/navbar.component';
+import { TaskFormComponent } from './registered-user/pages/home/components/taskForm/taskForm.component';
 
 export const options: Partial<IConfig> | (() => Partial<IConfig>) = {};
 @NgModule({
@@ -25,7 +26,8 @@ export const options: Partial<IConfig> | (() => Partial<IConfig>) = {};
       RegisteredUserComponent,
       TaskComponent,
       HomeComponent,
-      NavbarComponent
+      NavbarComponent,
+      TaskFormComponent
    ],
   imports: [
     BrowserModule,

@@ -9,7 +9,8 @@ import { TaskService } from '../../services/task.service';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-
+  criarTarefa: boolean | undefined;
+  
   tarefas: Tarefa[] | undefined;
 
   tarefasAcademico: Tarefa[] | undefined;
