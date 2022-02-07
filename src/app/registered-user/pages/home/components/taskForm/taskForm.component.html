@@ -1,7 +1,7 @@
 <form [formGroup]="formularioDaTarefa" (ngSubmit)="onSubmit(formularioDaTarefa.value)">
 
 
-
+  <h2> <label for="titulo" id="titulo">Cadastro de Tarefas </label><br></h2>
 
     <div class="form-group">
       <label for="nome" class="rotulos">Nome: </label><br>
@@ -31,4 +31,6 @@
       </span>
   </ng-container>
   </div>
+
+  <button class="btn btn-primary mx-2 shadow">Cadastrar Tarefa</button>
 </form>
