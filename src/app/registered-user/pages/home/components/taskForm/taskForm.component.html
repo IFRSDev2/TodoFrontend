@@ -1,11 +1,34 @@
 <form [formGroup]="formularioDaTarefa" (ngSubmit)="onSubmit(formularioDaTarefa.value)">
 
-  <div class="form-group">
-    <label for="nomeTarefa">Nome: </label>
-    <input type="text" name="nomeTarefa" id="nomeTarefa" formControlName="nomeTarefa">
-    <label for="tipoTarefa">Tipo: </label>
-    <input type="text" name="tipoTarefa" id="tipoTarefa" formControlName="tipoTarefa">
-    <label for="local">Local: </label>
-    <input type="text" name="local" id="local" formControlName="local">
+
+
+
+    <div class="form-group">
+      <label for="nome" class="rotulos">Nome: </label><br>
+      <input type="text" class="nomeTarefa" name="nomeTarefa" id="nome" required formControlName="nomeTarefa"><br>
+      <ng-container *ngIf="formularioDaTarefa.controls.nome.touched">
+        <span *ngIf="formularioDaTarefa.controls.nome.errors">
+          Campo obrigatório
+        </span>
+    </ng-container>
+    </div>
+    
+    <div class="form-group">
+    <label for="tipoTarefa">Tipo: </label><br>
+    <input type="text" name="tipoTarefa" id="tipoTarefa" required formControlName="tipoTarefa"><br>
+    <ng-container *ngIf="formularioDaTarefa.controls.nome.touched">
+      <span *ngIf="formularioDaTarefa.controls.nome.errors">
+        Campo obrigatório
+      </span>
+  </ng-container>
+  </div>
+   <div class="form-group">
+    <label for="local">Local: </label><br>
+    <input type="text" name="local" id="local" required formControlName="local"><br>
+    <ng-container *ngIf="formularioDaTarefa.controls.nome.touched">
+      <span *ngIf="formularioDaTarefa.controls.nome.errors">
+        Campo obrigatório
+      </span>
+  </ng-container>
   </div>
 </form>
